@@ -1,0 +1,16 @@
+[build]
+#target = "x86_64-pc-windows-gnu"
+target = "x86_64-pc-windows-msvc"
+
+rustflags = [
+        # Pre Link Args
+        #"-C", "link-args=/NOLOGO",
+        #"-C", "link-args=/NXCOMPAT",
+        #"-C", "link-args=/NODEFAULTLIB",
+        #"-C", "link-args=/MANIFEST:NO",
+	#"-C", "link-args=/ENTRY:_start",
+	#"-C", "link-args=/SUBSYSTEM:console",
+	#"-C", "link-args=/LINK",
+	#"-C", "link-args=/GS-",
+	#"-C", "relocation-model=dynamic-no-pic",
+]
