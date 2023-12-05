@@ -12,11 +12,10 @@ pub struct UNICODE_STRING {
 }
 
 impl UNICODE_STRING {
-    pub fn to_string(&self) -> String {
+    pub fn to_string(&self) -> &[u8] {
         let ptr = self.BufferPtr as *const u8;
         let arr = unsafe { core::slice::from_raw_parts(ptr, self.Length as usize) };
-        let u16_slice = unsafe { &arr.align_to::<u16>().1 };
-        return String::from_utf16(&u16_slice).unwrap();
+        arr
     }
 }
 

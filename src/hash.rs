@@ -11,5 +11,5 @@ pub fn fnv1a_hash(b: &[u8]) -> usize {
 
     let mut hash = FNV_offset_basis;
 
-    b.iter().fold(hash, |acc,x| ((acc ^ *x as usize).wrapping_mul(FNV_prime)))
+    b.iter().filter(|x| **x != 0).fold(hash, |acc,x| ((acc ^ *x as usize).wrapping_mul(FNV_prime)))
 }
