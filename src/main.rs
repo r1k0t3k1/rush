@@ -20,7 +20,7 @@ use pe::PE;
 // required by no_std
 #[panic_handler]
 fn handle_panic(_info: &PanicInfo) -> ! {
-    loop {}
+    loop{}
 }
 
 #[no_mangle]
@@ -82,6 +82,7 @@ pub extern "stdcall" fn main() -> i64 {
         "Title\0".as_ptr(),
         0
     );
-    return 0;
+
+    0
 }
 
